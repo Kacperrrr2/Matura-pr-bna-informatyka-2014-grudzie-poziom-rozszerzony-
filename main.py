@@ -1,66 +1,46 @@
-wiersze=open('slowa.txt','r')
-tab=["100010000100",
-"001",
-"000",
-"10101001110000",
-"000011"]
-# for wiersz in wiersze:
-#     tab.append(wiersz.strip())
-
-#ZADANIE 4.1
-# liczbazer=0
-# liczbajedynek=0
-# tabLiczbaZerWiekszaOdLiczbyJedynek=[]
-# for i in tab:
-#     for j in i:
-#         if j=='1':
-#             liczbajedynek+=1
-#         if j=='0':
-#             liczbazer+=1
-#     if liczbajedynek<liczbazer:
-#         tabLiczbaZerWiekszaOdLiczbyJedynek.append(i)
-#     liczbazer=0
-#     liczbajedynek=0
+wiersze=open('dziennik.txt','r')
+tab=[]
+for wiersz in wiersze:
+    tab.append(int(wiersz.strip()))
+# ZAD5.1
+# licznik=0
+# ilosc_liczb_wiekszych=0
+# for i in range(len(tab)-1):
+#     if tab[i+1]>tab[i]:
+#         licznik+=1
+#     else:
+#         licznik=0
+#     if licznik==2:
+#         ilosc_liczb_wiekszych+=1
 #
+# print(ilosc_liczb_wiekszych)
+# ZAD5.2
 #
-# print(tabLiczbaZerWiekszaOdLiczbyJedynek)
-
-# ZAD4.2
-# liczbazer=0
-# liczbajedynek=0
-# tabLiczbaZerWiekszaOdLiczbyJedynek=[]
-# for i in tab:
-#     for j in range(len(i)-1):
-#         if i[j]!=i[j+1]:
-#             liczbazer+=1
-#     if liczbazer==1:
-#         tabLiczbaZerWiekszaOdLiczbyJedynek.append(i)
-#     liczbazer=0
-# print(tabLiczbaZerWiekszaOdLiczbyJedynek)
-
-#ZAD4.3
-# liczbazer=0
-# liczbajedynek=0
-# maks=0
-# tabLiczbaZerWiekszaOdLiczbyJedynek=[]
-# wynik=[]
-# for i in tab:
-#     for j in range(len(i)):
-#         if i[j]=="0":
-#             liczbazer+=1
-#         if i[j]=="1":
-#             liczbazer=0
-#         if liczbazer > maks:
-#             maks = liczbazer
-#     liczbazer=0
-# for i in tab:
-#     for j in range(len(i)):
-#         if i[j] == "0":
-#             liczbazer += 1
-#         if i[j] == "1":
-#             liczbazer = 0
-#         if liczbazer == maks:
-#             wynik.append(i)
-#     liczbazer=0
-# print(wynik)
-
+# min=tab[0]
+# max=tab[0]
+#
+# for i in range(1,len(tab)):
+#     if tab[i]>max:
+#         max=tab[i]
+#     if min>tab[i]:
+#         min=tab[i]
+# print(str(min)+ "  "+ str(max))
+# ZAD5.3
+# licznik_max=0
+# licznik=0
+# ilosc_liczb_wiekszych=0
+# poczatkowa_serii=0
+# roznica=0
+# for i in range(len(tab)-1):
+#     if tab[i+1]>tab[i]:
+#         licznik+=1
+#         if licznik==1:
+#             poczatkowa_serii=tab[i]
+#     else:
+#         max_serii=tab[i]
+#         if licznik > licznik_max:
+#             licznik_max = licznik
+#             roznica=max_serii-poczatkowa_serii
+#         licznik=0
+#         poczatkowa_serii=0
+# print(str(licznik_max)+ "    "+str(roznica)+"    ")
